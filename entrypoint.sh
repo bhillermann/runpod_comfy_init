@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 1. Setup Blackwell-optimized Virtual Environment in persistent storage
-python3 -m venv /workspace/comfy_venv
-source /workspace/comfy_venv/bin/activate
+python3 -m venv /workspace/comfyui_venv
+source /workspace/comfyui_venv/bin/activate
 
 # 2. Clone ComfyUI and Core Extensions
 cd /workspace
@@ -11,8 +11,8 @@ if [ ! -d "ComfyUI" ]; then
 fi
 
 cd /workspace/ComfyUI/custom_nodes
-[ ! -d "ComfyUI-Manager" ] && git clone https://github.com
-[ ! -d "ComfyUI-Civitai-Helper" ] && git clone https://github.com
+[ ! -d "ComfyUI-Manager" ] && git clone https://github.com/Comfy-Org/ComfyUI-Manager
+[ ! -d "Civicomfy" ] && git clone https://github.com/MoonGoblinDev/Civicomfy
 
 # 3. Install Dependencies while protecting System PyTorch (CUDA 12.8)
 cd /workspace/ComfyUI
